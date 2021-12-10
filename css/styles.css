@@ -160,3 +160,24 @@ a {
     padding-left: 0rem;
   }
 }
+
+/* Icons */
+.icon {
+  width: 40px;
+  height: 40px;
+}
+/* use -- to represent modifier */
+.icon--primary {
+  /* this property only works for svg images*/
+  fill: var(--color-primary);
+}
+/* use - to separate multiple words */
+.icon-container {
+  background: #f3f9fa;
+  border-radius: 100%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 64px;
+  width: 64px;
+}
