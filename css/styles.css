@@ -180,10 +180,19 @@ a {
   height: 40px;
 }
 
+.icon--small {
+  width: 30px;
+  height: 30px;
+}
+
 /* use -- to represent modifier */
 .icon--primary {
   /* this property only works for svg images*/
   fill: var(--color-primary);
+}
+
+.icon--white {
+  fill: white;
 }
 
 .icon--accent {
@@ -193,6 +202,7 @@ a {
 }
 
 /* use - to separate multiple words */
+/* this is basic icon-container rule */
 .icon-container {
   background: #f3f9fa;
   border-radius: 100%;
@@ -201,6 +211,11 @@ a {
   align-items: center;
   height: 64px;
   width: 64px;
+}
+
+/* the skin of icon-container */
+.icon-container--accent {
+  background: var(--color-accent);
 }
 
 /* Buttons */
@@ -482,5 +497,36 @@ a {
 @media screen and (min-width: 1024px) {
   .grid--1x3 {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Testimonials */
+.testimonial {
+  padding: 3rem;
+}
+
+.testimonial__image {
+  position: relative;
+  margin: 0 3rem;
+}
+
+.testimonial__image > img {
+  width: 100%;
+}
+
+.testimonial__image > .icon-container {
+  position: absolute;
+  top: 3rem;
+  right: -32px;
+}
+
+@media screen and (min-width: 768px) {
+  .testimonial .quote,
+  .testimonial .quote__author {
+    font-size: 2.4rem;
+  }
+
+  .testimonial .quote {
+    margin-left: 6rem;
   }
 }
