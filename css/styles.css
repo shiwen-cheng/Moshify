@@ -18,6 +18,10 @@
 }
 
 /* Typography */
+::selection {
+  background: var(--color-primary);
+  color: #fff;
+}
 
 html {
   /* 62.5% of 16px = 10px */
@@ -53,6 +57,7 @@ h2 {
 h3 {
   /* 3 x font size of the html element */
   font-size: 3rem;
+  font-weight: 500;
 }
 
 p {
@@ -148,7 +153,6 @@ a {
   /* to get rid of the default bullet point */
   list-style: none;
   padding-left: 0;
-  color: var(--color-headings);
 }
 
 /* horizontal list */
@@ -160,6 +164,7 @@ a {
 
 /* vertical list */
 .list--tick {
+  color: var(--color-headings);
   list-style-image: url(../images/tick.svg);
   padding-left: 3rem;
 }
@@ -448,6 +453,7 @@ a {
 /* Media */
 .media {
   display: flex;
+  margin-bottom: 4rem;
 }
 
 .media__title {
@@ -665,17 +671,20 @@ a {
   color: #7b858b;
 }
 
-.block--dark .block__heading {
+/* 在黑色 block 中的标题，都设置为白色 */
+.block--dark h1,
+.block--dark h2,
+.block--dark h3 {
   color: white;
 }
 
 .block--skewed-right {
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 80%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 90%);
   padding-bottom: calc(var(--padding-vertical)+4rem);
 }
 
 .block--skewed-left {
-  clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
   padding-bottom: calc(var(--padding-vertical)+4rem);
 }
 
@@ -754,10 +763,6 @@ a {
 }
 
 /* Hero */
-
-.hero {
-  clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
-}
 
 .hero__tagline {
   font-size: 2rem;
@@ -839,5 +844,27 @@ a {
 @media screen and (min-width: 768px) {
   .feature:nth-of-type(even) .feature__content {
     order: 2;
+  }
+}
+
+/* Showcase Block */
+
+.block-showcase__image > img {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .block-showcase .grid {
+    grid-template-columns: 50% 50%;
+    /* 这样列的宽度不会由其中内容的 width 决定，而 1fr 1fr 会导致这种情况 */
+  }
+
+  .block-showcase__image {
+    justify-self: end;
+  }
+
+  .block-showcase__image > img {
+    width: auto;
+    max-width: 700px;
   }
 }
