@@ -233,7 +233,7 @@ a {
   font-weight: 600;
   margin: 1rem 0;
   outline: 0;
-  padding: 2rem 3rem;
+  padding: 2rem 4vw;
   text-align: center;
   text-transform: uppercase;
   white-space: nowrap;
@@ -324,6 +324,7 @@ a {
 }
 
 .input-group .input {
+  width: 0;
   border: 0;
   flex-grow: 1;
   padding: 1.5rem 2rem;
@@ -795,8 +796,9 @@ a {
 }
 
 .block-domain__prices {
+  color: var(--color-headings);
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   /* define width */
   grid-template-rows: repeat(2, 6rem);
   /* define height of each row */
@@ -835,7 +837,7 @@ a {
 }
 
 .feature__heading {
-  margin-top: 1rem 0;
+  margin: 1rem 0;
 }
 
 .feature__image {
